@@ -1,4 +1,5 @@
 import React from 'react'
+import './Navigation.css'
 
 export function Navigation(props) {
 
@@ -6,9 +7,7 @@ export function Navigation(props) {
     <div className="row">
       <div className="col-12">
         <nav>
-          {props.prev ? (<a href={props.prev} onClick={props.handleNavigation}>previous</a>) : ('')}
-          {props.prev ? ' | ' : ''}
-          <a href={props.next} onClick={props.handleNavigation}>next</a>
+          <a href={props.more} onClick={props.handleNavigation}>More</a>
         </nav>
       </div>
     </div>

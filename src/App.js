@@ -18,8 +18,7 @@ class App extends Component {
       .then(json => {
         this.setState({
           techs: json.data.techs,
-          next: json.data.next,
-          prev: json.data.prev
+          more: json.data.next
         })
       })
   }
@@ -36,8 +35,7 @@ class App extends Component {
       .then(json => {
         this.setState({
           techs: json.data.techs,
-          next: json.data.next,
-          prev: json.data.prev
+          more: json.data.next
         })
       })
   }
@@ -59,7 +57,7 @@ class App extends Component {
             {this.state.techs.map((tech, index) =>
               <Tech url={tech.url} publisher={tech.publisher} title={tech.title} pubDate={tech.pub_date} key={index} />
             )}
-            <Navigation handleNavigation={this.handleNavigation} prev={this.state.prev} next={this.state.next} />
+            <Navigation handleNavigation={this.handleNavigation} more={this.state.more} />
           </div>
         </main>
       </div>
