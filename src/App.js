@@ -13,24 +13,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://dry-ocean-29667.herokuapp.com/api/techs')
-      .then(result => result.json())
-      .then(json => {
-        this.setState({
-          techs: json.data.techs,
-          more: json.data.next
-        })
-      })
+    this.fetchHome()
   }
 
   componentDidUpdate() {
     window.scrollTo(0, 0)
   }
 
-  handleNavigation = event => {
-    event.preventDefault()
-    var href = event.target.getAttribute('href')
-    fetch(href)
+  fetchHome = () => {
+    this.fetchTechs('https://dry-ocean-29667.herokuapp.com/api/techs')
+  }
+
+  fetchTechs = location => {
+    fetch(location)
       .then(result => result.json())
       .then(json => {
         this.setState({
@@ -38,6 +33,17 @@ class App extends Component {
           more: json.data.next
         })
       })
+  }
+
+  handleNavigation = event => {
+    event.preventDefault()
+    var href = event.target.getAttribute('href')
+    this.fetchTechs(href)
+  }
+
+  handleHome = event => {
+    event.preventDefault()
+    this.fetchHome()
   }
 
   render() {
@@ -47,7 +53,7 @@ class App extends Component {
           <div className="container">
             <div className="row">
             	<div className="col-12">
-                <a href="/"><img className="logo" src={logo} alt="Techs logo."/></a>
+                <a href="/" onClick={this.handleHome}><img className="logo" src={logo} alt="Techs logo."/></a>
             	</div>
             </div>
           </div>
