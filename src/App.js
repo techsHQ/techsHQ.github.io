@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import './Reset.css';
 import './App.css';
 import logo from './logo.svg';
@@ -22,6 +23,10 @@ class App extends Component {
           prev: json.data.prev
         })
       })
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0)
   }
 
   handleNavigation = event => {
