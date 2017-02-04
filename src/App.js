@@ -16,7 +16,6 @@ class App extends Component {
     fetch('https://dry-ocean-29667.herokuapp.com/api/techs')
       .then(result => result.json())
       .then(json => {
-        console.log(json.data)
         this.setState({
           techs: json.data.techs,
           next: json.data.next,
@@ -31,7 +30,6 @@ class App extends Component {
     fetch(href)
       .then(result => result.json())
       .then(json => {
-        console.log(json.data)
         this.setState({
           techs: json.data.techs,
           next: json.data.next,
