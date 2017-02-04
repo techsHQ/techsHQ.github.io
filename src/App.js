@@ -4,12 +4,14 @@ import './App.css';
 import logo from './logo.svg';
 import { Tech } from './components/Tech'
 import { Navigation } from './components/Navigation'
+import { ErrorMessage } from './components/ErrorMessage'
 
 class App extends Component {
   state = {
     techs: [],
     next: '',
-    prev: ''
+    prev: '',
+    error: ''
   }
 
   componentDidMount() {
@@ -26,12 +28,20 @@ class App extends Component {
 
   fetchTechs = location => {
     fetch(location)
-      .then(result => result.json())
+      .then(res => res.json())
       .then(json => {
-        this.setState({
-          techs: json.data.techs,
-          more: json.data.next
-        })
+        if (json.error) {
+          this.setState({
+            error: json.error.message
+          })
+          setTimeout(() => this.setState({error: ''}), 2500)
+        } else {
+          this.setState({
+            techs: json.data.techs,
+            more: json.data.next,
+            error: ''
+          })
+        }
       })
   }
 
@@ -60,6 +70,7 @@ class App extends Component {
         </header>
         <main>
           <div className="container">
+            {this.state.error && <ErrorMessage err={this.state.error}/>}
             {this.state.techs.map((tech, index) =>
               <Tech url={tech.url} publisher={tech.publisher} title={tech.title} pubDate={tech.pub_date} key={index} />
             )}
