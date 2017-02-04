@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 import './Reset.css';
 import './App.css';
 import logo from './logo.svg';
@@ -49,11 +48,9 @@ class App extends Component {
         <header>
           <div className="container">
             <div className="row">
-              <div className="col-3 hidden-sm"></div>
-            	<div className="col-6">
+            	<div className="col-12">
                 <a href="/"><img className="logo" src={logo} alt="Techs logo."/></a>
             	</div>
-              <div className="col-3 hidden-sm"></div>
             </div>
           </div>
         </header>
