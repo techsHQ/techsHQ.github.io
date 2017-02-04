@@ -1,0 +1,15 @@
+.logo {
+  width: 32px;
+  display: inline;
+  vertical-align: middle;
+}
+
+header::after {
+  background: linear-gradient(to right, #34495e, #ecf0f1);
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 52px;
+  height: 2px;
+  left: 0;
+}
