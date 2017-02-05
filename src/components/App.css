@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+}
+
+.domain {
+  margin-left: 0.4rem;
+}
+
+.domain, .domain a {
+  font-size: 0.6rem;
+  color: #95a5a6;
+}
+
+.domain a:hover {
+  text-decoration: underline;
+}

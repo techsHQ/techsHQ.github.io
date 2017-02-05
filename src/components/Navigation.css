@@ -1,3 +1,7 @@
 nav a {
   color: #95a5a6;
 }
+
+nav {
+  padding-bottom: 2rem;
+}
