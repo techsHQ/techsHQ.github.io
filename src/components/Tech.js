@@ -17,9 +17,9 @@ export function Tech(props) {
   return (
     <div className="row">
       <div className="col-12">
-        <p className="title"><a href={props.url} target="_blank">{props.title} <i className="fa fa-external-link fa-1" aria-hidden="true"></i>
+        <p className="title"><a href={props.url} target="_blank">{props.title} <i className="fa fa-external-link" aria-hidden="true"></i>
 </a></p>
-        <p className="tech-info">{new Date(props.pubDate).toLocaleDateString()} by <a href={baseUrl(props.url)} className="publisher">{capitalizeFirstLetter(props.publisher)}</a></p>
+        <p className="tech-info">{new Date(props.pubDate).toLocaleDateString()} by <a href={baseUrl(props.url)} target="_blank" className="publisher">{capitalizeFirstLetter(props.publisher)}</a></p>
       </div>
     </div>
   )

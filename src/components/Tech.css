@@ -2,15 +2,15 @@
   line-height: 1.2rem;
 }
 
-.title i {
-  font-size: 0.5rem;
-  color: #95a5a6;
-}
-
 .tech-info, .publisher {
   line-height: 1.2rem;
   font-size: 0.7rem;
   color: #95a5a6;
+}
+
+.title i {
+  color: #95a5a6;
+  font-size: 0.5rem;
 }
 
 .publisher:hover {
