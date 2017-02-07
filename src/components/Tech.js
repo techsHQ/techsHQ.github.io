@@ -8,9 +8,7 @@ function capitalizeFirstLetter(string) {
 function baseUrl(url) {
   var a = document.createElement('a')
   a.href = url
-  var temp = a.hostname.split('.')
-  temp.shift()
-  return a.protocol + '//' + temp.join('.')
+  return a.protocol + '//' + a.hostname.split('.').slice(-2).join('.')
 }
 
 export function Tech(props) {
