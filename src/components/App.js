@@ -63,7 +63,7 @@ class App extends Component {
           <div className="container">
             {this.state.error && <ErrorMessage err={this.state.error}/>}
             {this.state.techs.map((tech, index) =>
-              <Tech url={tech.url} publisher={tech.publisher} title={tech.title} pubDate={tech.pub_date} key={index}/>
+              <Tech url={tech.url} publisher={tech.publisher_display_name} title={tech.title} pubDate={tech.pub_date} key={index}/>
             )}
             <Navigation handleNavigation={this.handleNavigation} more={this.state.more}/>
           </div>
